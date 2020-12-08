@@ -1,0 +1,13 @@
+<h1>How far behind are we?</h1>
+
+<form class="releases-lookup-form" {{on "submit" this.openLinkToRepoPage}}>
+
+  <label for="owner-repo">Github owner/repo</label>
+  <OwnerRepoInput id="owner-repo" name="ownerRepo" required />
+
+  <label for="version">Your current version</label>
+  <SemverInput id="version" name="version" />
+
+  <button type="submit">How far behind are we?</button>
+
+</form>

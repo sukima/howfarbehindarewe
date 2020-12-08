@@ -1,0 +1,25 @@
+<h3>Releases</h3>
+
+<LinkTo @route="index">Try another one</LinkTo>
+
+<SemverInput
+  name="version"
+  value={{this.version}}
+  {{on "input" this.updateVersion}}
+/>
+
+<ComparedVersions
+  @versionA={{this.comparedVersion}}
+  @versionB={{this.latestVersion}}
+  as |diff|
+>
+  {{#if diff.isInvalid}}
+    {{this.version}} is an invalid semver.
+  {{else if diff.isSame}}
+    You are at the latest version!
+  {{else if diff.isInFuture}}
+    You are {{diff.size}} {{diff.type}} {{pluralize "version" diff.size}} beyond. You live in the future!
+  {{else}}
+    {{diff.size}} {{diff.type}} {{pluralize "version" diff.size}}
+  {{/if}}
+</ComparedVersions>

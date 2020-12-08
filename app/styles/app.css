@@ -1,0 +1,9 @@
+:root {
+  --default-color: gainsboro;
+  --info-color: lightblue;
+  --success-color: lightgreen;
+  --warning-color: orange;
+  --danger-color: salmon;
+}
+
+
